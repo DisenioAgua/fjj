@@ -50,10 +50,10 @@
             {!! Form::open(['route'=>'login.store','method'=>'POST'])!!}
               <h1>Iniciar Sesión</h1>
               <div>
-                {!!Form::text('name',null,['placeholder'=>'Nombre de usuario'])!!}
+                {!!Form::text('name',null,['placeholder'=>'Nombre de usuario','autocomplete'=>'off'])!!}
               </div>
               <div>
-                {!!Form::password('password',null,['placeholder'=>'Contraseña'])!!}
+                {!!Form::password('password',null,['placeholder'=>'Contraseña','autocomplete'=>'off'])!!}
                 {!!link_to('pass',$title = '¿Olvidó su contraseña?')!!}
               </div>
               <div>
