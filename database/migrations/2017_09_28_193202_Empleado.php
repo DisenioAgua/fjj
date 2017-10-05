@@ -22,6 +22,8 @@ class Empleado extends Migration
             $table->string('dui');
             $table->string('foto');
             $table->Integer('acceso');
+            $table->boolean('sexo');
+
 
 
 

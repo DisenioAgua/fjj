@@ -14,7 +14,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = ['nombre', 'apellido', 'direccion','telefono','dui','foto','name','email','password','acceso'];
+    protected $fillable = ['nombre', 'apellido', 'direccion','telefono','dui','foto','name','email','password','acceso','sexo'];
 
     public static function buscar($nombre){
       return User::nombre($nombre)->orderBy('apellido')->paginate(8);
