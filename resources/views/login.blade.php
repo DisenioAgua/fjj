@@ -29,6 +29,7 @@
 
     <!-- Custom Theme Style -->
     {!!Html::style('assets/build/css/custom.css')!!}
+    
   </head>
 
   <body class="login">
@@ -68,7 +69,8 @@
                 <br />
 
                 <div>
-                  <h1><i class="fa fa-paw"></i> Srip!</h1>
+                  <a href="index.html" class="site_title"><img src= {!! asset("img/logo2.png") !!}  alt="" style="height:50px">
+                     </a>
                 </div>
               </div>
             {!!Form::close()!!}

@@ -17,7 +17,7 @@ $(document).ready(function(){
       "<td>"+nombreproducto+"</td>"+
       "<td>"+cantidad+"</td>"+
       "<td>"+precio+"</td>"+
-      "<td> <button id='btneliminar' class='btn btn-danger'>Eliminar</button></td>"+
+      "<td> <button id='btneliminar' class='btn-group btn btn-danger btn-xs'></button></td>"+
       "</tr>"
     );
     totalcompra+=parseFloat(precio)*parseFloat(cantidad);

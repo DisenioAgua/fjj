@@ -47,7 +47,7 @@
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
-            {!! Form::open(['url'=>'pass/correo','method'=>'POST'])!!}
+            {!! Form::open(['url'=>'pass/correo','method'=>'POST','autocomplete'=>'off'])!!}
               <h1>Iniciar Sesión</h1>
               <div>
                 {!!Form::text('email',null,['placeholder'=>'Correo'])!!}
@@ -64,7 +64,8 @@
                 <br />
 
                 <div>
-                  <h1><i class="fa fa-paw"></i> Srip!</h1>
+                  <a href="index.html" class="site_title"><img src= {!! asset("img/logo2.png") !!}  alt="" style="height:60px">
+                     <span>Srip</span></a>
                 </div>
               </div>
             {!!Form::close()!!}

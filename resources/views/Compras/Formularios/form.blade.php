@@ -17,7 +17,7 @@
     </div>
 
     <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-      <span class="fa fa-home form-control-feedback left" aria-hidden="true"></span>
+      <span class="fa fa-paste form-control-feedback left" aria-hidden="true"></span>
       {!! Form::text('num_factura',null,['class'=>'form-control has-feedback-left','placeholder'=>'Numero de Factura'])!!}
     </div>
 
@@ -36,25 +36,25 @@
     </div>
     <div class="row">
       <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-        <span class="fa fa-home form-control-feedback left" aria-hidden="true"></span>
+        <span class="fa fa-barcode form-control-feedback left" aria-hidden="true"></span>
         {!! Form::text('compra_id',null,['id'=>'lcodigo','class'=>'form-control has-feedback-left','placeholder'=>'Codigo'])!!}
       </div>
       <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-        <span class="fa fa-home form-control-feedback left" aria-hidden="true"></span>
+        <span class="fa fa-cubes form-control-feedback left" aria-hidden="true"></span>
         {!! Form::text('producto_id',null,['id'=>'lproducto','class'=>'form-control has-feedback-left','placeholder'=>'Nombre del producto'])!!}
       </div>
       <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-        <span class="fa fa-home form-control-feedback left" aria-hidden="true"></span>
+        <span class="fa fa-plus-square-o form-control-feedback left" aria-hidden="true"></span>
         {!! Form::number('cantidad',null,['id'=>'lcantidad','class'=>'form-control has-feedback-left','placeholder'=>'Cantidad'])!!}
       </div>
       <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-        <span class="fa fa-home form-control-feedback left" aria-hidden="true"></span>
+        <span class="fa fa-dollar form-control-feedback left" aria-hidden="true"></span>
         {!! Form::number('precio',null,[ 'id'=>'lprecio','class'=>'form-control has-feedback-left','placeholder'=>'Precio'])!!}
       </div>
     </div>
     <center>
     <div class="row">
-      <button id='bagregar' type="button" class="btn btn-default">
+      <button id='bagregar' type="button" class="btn btn-success">
       Agregar</button>
     </div>
   </center>
@@ -89,13 +89,14 @@
     </div>
 <div class="row">
   <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-    <span class="fa fa-home form-control-feedback left" aria-hidden="true"></span>
+    <span class="fa fa-dollar form-control-feedback left" aria-hidden="true"></span>
     {!! Form::number('total',null,[ 'id'=>'ltotal','class'=>'form-control has-feedback-left','placeholder'=>'Total'])!!}
   </div>
 </div>
 </div>
 <center>
 {!!Form::submit('Guardar',['class'=>'btn btn-default'])!!}
-<a href={!! asset('/compra')!!} class="btn btn-default">Cancelar</a>
+<button type="reset" name="button" class="btn btn-default">Limpiar</button>
+<a href={!! asset('fondo')!!} class="btn btn-default">Cancelar</a>
 </center>
 </div>

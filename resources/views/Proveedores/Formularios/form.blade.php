@@ -20,7 +20,7 @@
     <label class="control-label col-md-3 col-sm-3 col-xs-12">Dirección:</label>
     <div class="col-md-9 col-sm-9 col-xs-12">
       <span class="fa fa-home form-control-feedback left" aria-hidden="true"></span>
-      {!! Form::text('direccion',null,['class'=>'form-control has-feedback-left','placeholder'=>'Nombre del nuevo proveedor'])!!}
+      {!! Form::text('direccion',null,['class'=>'form-control has-feedback-left','placeholder'=>'Dirección del nuevo proveedor'])!!}
     </div>
   </div>
   @foreach ($errors->get('telefono') as  $error)
@@ -32,7 +32,7 @@
     <label class="control-label col-md-3 col-sm-3 col-xs-12">Teléfono:</label>
     <div class="col-md-9 col-sm-9 col-xs-12">
       <span class="fa fa-phone form-control-feedback left" aria-hidden="true"></span>
-      {!! Form::text('telefono',null,['class'=>'form-control has-feedback-left','onKeyPress'=> 'return validarTelefono(this, event, this.value);','placeholder'=>'Nombre del nuevo proveedor'])!!}
+      {!! Form::text('telefono',null,['class'=>'form-control has-feedback-left','onKeyPress'=> 'return validarTelefono(this, event, this.value);','placeholder'=>'Teléfono del nuevo proveedor'])!!}
     </div>
   </div>
   @foreach ($errors->get('nit') as  $error)
@@ -44,7 +44,7 @@
     <label class="control-label col-md-3 col-sm-3 col-xs-12">NIT:</label>
     <div class="col-md-9 col-sm-9 col-xs-12">
       <span class="fa fa-indent form-control-feedback left" aria-hidden="true"></span>
-      {!! Form::text('nit',null,['class'=>'form-control has-feedback-left','placeholder'=>'Nombre del nuevo proveedor'])!!}
+      {!! Form::text('nit',null,['class'=>'form-control has-feedback-left','placeholder'=>'NIT'])!!}
     </div>
   </div>
   <center>
