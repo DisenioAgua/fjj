@@ -47,13 +47,13 @@
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
-            {!! Form::open(['route'=>'login.store','method'=>'POST'])!!}
+            {!! Form::open(['route'=>'login.store','method'=>'POST','autocomplete'=>'off'])!!}
               <h1>Iniciar Sesión</h1>
               <div>
-                {!!Form::text('name',null,['placeholder'=>'Nombre de usuario','autocomplete'=>'off'])!!}
+                {!!Form::text('name',null,['placeholder'=>'Nombre de usuario'])!!}
               </div>
               <div>
-                {!!Form::password('password',null,['placeholder'=>'Contraseña','autocomplete'=>'off'])!!}
+                {!!Form::password('password',null,['placeholder'=>'Contraseña'])!!}
                 {!!link_to('pass',$title = '¿Olvidó su contraseña?')!!}
               </div>
               <div>
