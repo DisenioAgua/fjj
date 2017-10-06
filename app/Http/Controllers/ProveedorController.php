@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Bitacora;
 use Illuminate\Http\Request;
-//para poder usar las funciones del controlador 
+//para poder usar las funciones del controlador
 use App\Http\Controllers\Controller;
 use App\Proveedor; //para poder usar el modelo
 use Redirect;
@@ -46,6 +47,7 @@ class ProveedorController extends Controller
     {
         //
         Proveedor::create($request->All());
+        Bitacora::bitacora("Registro de nuevo proveedor: " .$request->nombre);
         return redirect('/proveedores')->with('mensaje','Hecho');
     }
 
@@ -127,6 +129,7 @@ class ProveedorController extends Controller
           $this->validate($request,$val,$men);
           $proveedores->fill($request->all());
           $proveedores->save();
+          Bitacora::bitacora("Modificación de proveedor: ".$request->nombre);
           return redirect('/proveedores')->with('mensaje','Hecho');
         }
 
@@ -145,6 +148,7 @@ class ProveedorController extends Controller
     {
         //
         $proveedores = Proveedor::findOrFail($id);
+        Bitacora::bitacora("Proveedor eliminado: ".$proveedores->nombre);
         $proveedores->delete();
         return redirect('/proveedores');
     }

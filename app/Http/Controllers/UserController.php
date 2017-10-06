@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Bitacora;
 use Illuminate\Http\Request;
 use Input;
 use App\Http\Controllers\Controller;
@@ -49,6 +50,7 @@ class UserController extends Controller
       $request['foto']= $file->getClientOriginalName();
       $request['password']=bcrypt($request['password']);
       User::create($request->All());
+      Bitacora::bitacora("Registro de nuevo usuario: " .$request->name);
       return redirect('/users')->with('mensaje','Hecho');
     }
 
@@ -173,6 +175,7 @@ class UserController extends Controller
        $this->validate($request,$val,$men);
        $users->fill($request->all());
        $users->save();
+       Bitacora::bitacora("Modificación de usuario: ".$request->name);
        return redirect('/users')->with('mensaje','Hecho');
      }
     }
@@ -186,6 +189,7 @@ class UserController extends Controller
     public function destroy($id)
     {
       $users = User::findOrFail($id);
+      Bitacora::bitacora("Usuario eliminado: ".$users->name);
       $users->delete();
       return redirect('/users');
     }

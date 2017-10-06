@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Bitacora;
 use Illuminate\Http\Request;
 use Input;
 use App\Http\Controllers\Controller;
@@ -61,6 +62,7 @@ class ProductoController extends Controller
         $image->save($path.$hora.$file->getClientOriginalName());
         $request['ruta']= $hora.$file->getClientOriginalName();
         Producto::create($request->All());
+        Bitacora::bitacora("Registro de nuevo producto: " .$request->nombre);
         return redirect('/productos')->with('mensaje','Hecho');
     }
 
@@ -136,6 +138,7 @@ class ProductoController extends Controller
           $this->validate($request,$validar,$men);
           $productos->fill($request->all());
           $productos->save();
+          Bitacora::bitacora("Modificación de producto: ".$request->nombre);
           return redirect('/productos')->with('mensaje','Hecho');
         }
 
@@ -152,6 +155,7 @@ class ProductoController extends Controller
     {
         //
         $productos = Producto::findOrFail($id);
+        Bitacora::bitacora("Producto eliminado: ".$productos->nombre);
         $productos->delete();
         return redirect('/productos');
     }

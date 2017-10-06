@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Bitacora;
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
@@ -45,6 +46,7 @@ class CategoriaController extends Controller
     {
         //
         Categoria::create($request->All());
+        Bitacora::bitacora("Registro de nueva categoria: " .$request->nombre);
         return redirect('/categorias')->with('mensaje','Hecho');
     }
 
@@ -95,6 +97,7 @@ class CategoriaController extends Controller
         $categorias = Categoria::find($id);
         $categorias->fill($request->all());
         $categorias->save();
+        Bitacora::bitacora("Modificación de categoria: " .$request->nombre);
         return redirect('/categorias')->with('mensaje','Hecho');
     }
 
@@ -108,6 +111,7 @@ class CategoriaController extends Controller
     {
         //
         $categorias = Categoria::findOrFail($id);
+        Bitacora::bitacora("Categoria eliminada: " .$categorias->nombre);
         $categorias->delete();
         return redirect('/categorias');
     }

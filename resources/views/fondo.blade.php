@@ -36,14 +36,7 @@
 </head>
 
 <body class="nav-md">
-  @if(Session::has('mensaje'))
-    <?php $men=Session::pull('mensaje');
-    echo "<script>swal('$men','Click al botón!','success')</script>";?>
-  @endif
-  @if(Session::has('error'))
-    <?php $men=Session::pull('error');
-    echo "<script>swal('$men','Click al botón!','error')</script>";?>
-  @endif
+
   <div class="container body">
     <div class="main_container">
       <div class="col-md-3 left_col">
