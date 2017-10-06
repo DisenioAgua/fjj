@@ -29,7 +29,7 @@
 
     <!-- Custom Theme Style -->
     {!!Html::style('assets/build/css/custom.css')!!}
-    
+
   </head>
 
   <body class="login">
@@ -69,7 +69,7 @@
                 <br />
 
                 <div>
-                  <a href="index.html" class="site_title"><img src= {!! asset("img/logo2.png") !!}  alt="" style="height:50px">
+                  <a href="index.html"><img src= {!! asset("img/logo2.png") !!}  alt="" style="height:150px">
                      </a>
                 </div>
               </div>

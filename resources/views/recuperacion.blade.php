@@ -48,12 +48,12 @@
         <div class="animate form login_form">
           <section class="login_content">
             {!! Form::open(['url'=>'pass/correo','method'=>'POST','autocomplete'=>'off'])!!}
-              <h1>Iniciar Sesión</h1>
+              <h1>Recuperar Contraseña</h1>
               <div>
                 {!!Form::text('email',null,['placeholder'=>'Correo'])!!}
               </div>
               <div>
-                {!!Form::submit('Entrar')!!}
+                {!!Form::submit('Enviar')!!}
               </div>
 
               <div class="clearfix"></div>
@@ -64,8 +64,8 @@
                 <br />
 
                 <div>
-                  <a href="index.html" class="site_title"><img src= {!! asset("img/logo2.png") !!}  alt="" style="height:60px">
-                     <span>Srip</span></a>
+                  <a href="index.html" ><img src= {!! asset("img/logo2.png") !!}  alt="" style="height:150px">
+                     </a>
                 </div>
               </div>
             {!!Form::close()!!}
