@@ -44,7 +44,7 @@ class ProductoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ProductoRequest $request)
+    public function store(Request $request)
     {
         /*$binario_nombre_temporal=$_FILES['archivo']['tmp_name'];
         $binario_contenido = addslashes(fread(fopen($binario_nombre_temporal, "rb"), filesize($binario_nombre_temporal)));
@@ -52,7 +52,6 @@ class ProductoController extends Controller
         $request['archivo_binario']= $binario_contenido;
         $request['archivo_peso']=$_FILES['archivo']['size'];
         $request['archivo_tipo']=$_FILES['archivo']['type'];*/
-
 
         $file = Input::file('archivo');
         $hora = date('t').date('m').date('y').date('g').date('i').date('S');
@@ -132,7 +131,7 @@ class ProductoController extends Controller
             $validar['nombre']='required|min:4|max:20|unique:productos';
         }
             $validar['categoria_id']='integer|required|not_in:0';
-        if ($v1==1 && $v2==2 && $productos['categoria_id']==$request['categoria_id']) {
+        if ($v1==1 && $v2==1 && $productos['categoria_id']==$request['categoria_id']) {
             return redirect('/productos')->with('mensaje','No hay cambios');
         } else {
           $this->validate($request,$validar,$men);
