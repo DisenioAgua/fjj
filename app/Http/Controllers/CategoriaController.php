@@ -115,6 +115,7 @@ class CategoriaController extends Controller
         if ($v1==1 && $v2==1) {
             return redirect('/categorias')->with('mensaje','No hay cambios');
         } else {
+        $this->validate($request,$validar,$men);
         $categorias->fill($request->all());
         $categorias->save();
         Bitacora::bitacora("Modificación de categoria: " .$request->nombre);
